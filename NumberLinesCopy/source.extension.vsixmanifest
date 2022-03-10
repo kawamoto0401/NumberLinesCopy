@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-	<Metadata>
-		<Identity Id="NumberLinesCopy.be374291-fbf3-45f5-b5d7-0555e2c143e5" Version="1.0" Language="ja-JP" Publisher="Company" />
-		<DisplayName>NumberLinesCopy</DisplayName>
-		<Description xml:space="preserve">Make a copy of the number of lines.
+    <Metadata>
+        <Identity Id="NumberLinesCopy.be374291-fbf3-45f5-b5d7-0555e2c143e5" Version="1.0" Language="ja-JP" Publisher="Company" />
+        <DisplayName>NumberLinesCopy</DisplayName>
+        <Description xml:space="preserve">Make a copy of the number of lines.
 Press the shift key Converts tabs to spaces.
 
 行数を含めたコピーを行う。
 また、SHIFTキーを押しながらではTabをSpaceに変換します。</Description>
-		<License>Resources\License.txt</License>
-		<Icon>Resources\Package.ico</Icon>
-		<PreviewImage>Resources\Preview.png.png</PreviewImage>
-		<Tags>coding, copy</Tags>
-	</Metadata>
-	<Installation>
-		<InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0,18.0)">
-			<ProductArchitecture>amd64</ProductArchitecture>
-		</InstallationTarget>
-		<InstallationTarget Version="[14.0,18.0)" Id="Microsoft.VisualStudio.Pro">
-			<ProductArchitecture>amd64</ProductArchitecture>
-		</InstallationTarget>
-		<InstallationTarget Version="[14.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
-			<ProductArchitecture>amd64</ProductArchitecture>
-		</InstallationTarget>
-	</Installation>
-	<Dependencies>
-		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-	</Dependencies>
-	<Prerequisites>
-		<Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,18.0)" DisplayName="Visual Studio core editor" />
-	</Prerequisites>
-	<Assets>
-		<Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-	</Assets>
+        <MoreInfo>https://github.com/kawamoto0401/NumberLinesCopy</MoreInfo>
+        <License>Resources\License.txt</License>
+        <Icon>Resources\Package.ico</Icon>
+        <PreviewImage>Resources\Preview.png</PreviewImage>
+        <Tags>coding, copy</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0,18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[14.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[14.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,18.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
 </PackageManifest>
