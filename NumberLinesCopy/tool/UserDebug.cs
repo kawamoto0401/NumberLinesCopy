@@ -21,7 +21,7 @@ namespace NumberLinesCopy.tool
             [CallerLineNumber] int line = 0, [CallerMemberName] string name = "", [CallerFilePath] string path = "") {
             DateTime dt = DateTime.Now;
 
-            string str = string.Format("### Debug:{0},{1},{2},{3},{4},{5}", dt, dt.Millisecond, name, line, exception.Message, exception.StackTrace);
+            string str = string.Format("### Exception:{0},{1},{2},{3},{4},{5}", dt, dt.Millisecond, name, line, exception.Message, exception.StackTrace);
 
             System.Diagnostics.Trace.WriteLine(str);
 

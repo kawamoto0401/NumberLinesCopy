@@ -81,6 +81,8 @@ namespace NumberLinesCopy {
 
             OleMenuCommandService commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
             Instance = new Command(package, commandService);
+
+            Instance._dTE = await package.GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE.DTE;
             if (null != Instance._dTE) {
                 UserDebug.WriteLine(string.Format("Version={0}", Instance._dTE.Version));
                 UserDebug.WriteLine(string.Format("Name={0}", Instance._dTE.Name));
