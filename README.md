@@ -6,7 +6,7 @@ Press the shift key Converts tabs to spaces.
 行数を含めたコピーを行う。
 また、SHIFTキーを押しながらではTabをSpaceに変換します。
 
-[Preview](https://user-images.githubusercontent.com/98756005/158026359-4e8c1b53-a992-46ad-9a0f-3874c45970df.gif)
+![Preview](https://user-images.githubusercontent.com/98756005/158026359-4e8c1b53-a992-46ad-9a0f-3874c45970df.gif)
 
 開発環境!
 Microsoft.VisualStudio.Community 2022
