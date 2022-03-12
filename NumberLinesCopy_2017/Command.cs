@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using System;
+﻿using System;
 using System.ComponentModel.Design;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 using NumberLinesCopy.tool;
@@ -12,12 +12,13 @@ using EnvDTE;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-
-namespace NumberLinesCopy {
+namespace NumberLinesCopy_2017
+{
     /// <summary>
     /// Command handler
     /// </summary>
-    internal sealed class Command {
+    internal sealed class Command
+    {
         /// <summary>
         /// Command ID.
         /// </summary>
@@ -26,7 +27,7 @@ namespace NumberLinesCopy {
         /// <summary>
         /// Command menu group (command set GUID).
         /// </summary>
-        public static readonly Guid CommandSet = new Guid("f7f6bd7e-7afd-4d56-b30d-dbbb640e0513");
+        public static readonly Guid CommandSet = new Guid("fd360e16-6024-46fd-bbd5-b37d30e33d36");
 
         /// <summary>
         /// VS Package that provides this command, not null.
@@ -39,7 +40,8 @@ namespace NumberLinesCopy {
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
         /// <param name="commandService">Command service to add command to, not null.</param>
-        private Command(AsyncPackage package, OleMenuCommandService commandService) {
+        private Command(AsyncPackage package, OleMenuCommandService commandService)
+        {
             this.package = package ?? throw new ArgumentNullException(nameof(package));
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
@@ -51,7 +53,8 @@ namespace NumberLinesCopy {
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static Command Instance {
+        public static Command Instance
+        {
             get;
             private set;
         }
@@ -59,8 +62,10 @@ namespace NumberLinesCopy {
         /// <summary>
         /// Gets the service provider from the owner package.
         /// </summary>
-        private Microsoft.VisualStudio.Shell.IAsyncServiceProvider ServiceProvider {
-            get {
+        private Microsoft.VisualStudio.Shell.IAsyncServiceProvider ServiceProvider
+        {
+            get
+            {
                 return this.package;
             }
         }
@@ -74,12 +79,13 @@ namespace NumberLinesCopy {
         /// Initializes the singleton instance of the command.
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
-        public static async Task InitializeAsync(AsyncPackage package) {
+        public static async Task InitializeAsync(AsyncPackage package)
+        {
             // Switch to the main thread - the call to AddCommand in Command's constructor requires
             // the UI thread.
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
-            OleMenuCommandService commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
+            OleMenuCommandService commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as OleMenuCommandService;
             Instance = new Command(package, commandService);
 
             Instance._dTE = await package.GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE.DTE;
@@ -101,7 +107,8 @@ namespace NumberLinesCopy {
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="e">Event args.</param>
-        private void Execute(object sender, EventArgs e) {
+        private void Execute(object sender, EventArgs e)
+        {
             ThreadHelper.ThrowIfNotOnUIThread();
             string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
             try {

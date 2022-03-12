@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using System;
+﻿using System;
 using System.ComponentModel.Design;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 using NumberLinesCopy.tool;
@@ -12,8 +12,7 @@ using EnvDTE;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-
-namespace NumberLinesCopy {
+namespace NumberLinesCopy_2019 {
     /// <summary>
     /// Command handler
     /// </summary>
@@ -21,12 +20,12 @@ namespace NumberLinesCopy {
         /// <summary>
         /// Command ID.
         /// </summary>
-        public const int CommandId = 0x0100;
+        public const int CommandId = 4129;
 
         /// <summary>
         /// Command menu group (command set GUID).
         /// </summary>
-        public static readonly Guid CommandSet = new Guid("f7f6bd7e-7afd-4d56-b30d-dbbb640e0513");
+        public static readonly Guid CommandSet = new Guid("404a04a4-5409-4eb5-a8a1-22a68cfe8673");
 
         /// <summary>
         /// VS Package that provides this command, not null.

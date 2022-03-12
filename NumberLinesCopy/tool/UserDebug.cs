@@ -43,6 +43,7 @@ namespace NumberLinesCopy.tool {
     public enum EnumDebugMode {
         NULL,
         Output,
+        //log4net
         //NLog,
         //FileOut,
     }
@@ -50,7 +51,7 @@ namespace NumberLinesCopy.tool {
     internal sealed class SingletonWriteLine {
 
         private static IWriteLine _instance = new OutputWriteLine();
-        public static void setModel(EnumDebugMode enumDebugMode) {
+        public static void setModel(EnumDebugMode enumDebugMode, string cmd) {
             switch (enumDebugMode) {
                 case EnumDebugMode.NULL:
                     _instance = new NullObjectWriteLine();
@@ -71,8 +72,8 @@ namespace NumberLinesCopy.tool {
 
     public class UserDebug {
 
-        public static void setModel(EnumDebugMode enumDebugMode ) {
-            SingletonWriteLine.setModel(enumDebugMode);
+        public static void setModel(EnumDebugMode enumDebugMode, string cmd = "") {
+            SingletonWriteLine.setModel(enumDebugMode, cmd);
         }
 
         public static void WriteLine(string lineComment,
