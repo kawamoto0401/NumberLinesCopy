@@ -28,6 +28,7 @@ Microsoft.VisualStudio.Community 2017
 確認環境
 
 Microsoft.VisualStudio.Community 2017
+
 Microsoft.VisualStudio.Community 2019
 
 
@@ -42,6 +43,7 @@ Microsoft.VisualStudio.Community 2019
 
 Microsoft.VisualStudio.Community 2019
 
+Microsoft.VisualStudio.Pro 2019
 
 参考
 
